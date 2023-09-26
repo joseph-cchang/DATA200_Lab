@@ -27,6 +27,8 @@ ax.set_xlabel('Height Value')
 ax.set_ylabel('Count')
 
 st.pyplot(fig)
+st.write("This histogram shows the height of the fish. The most common fish height is between the 5.0 - 7.5, with around 40 counts. Overall, 
+          the distribution seems skew right.")
 
 
 st.write("Here is a scatterplot graph")
@@ -36,5 +38,9 @@ ax.set_xlabel("Height")
 ax.set_ylabel("Weight")
 ax.set_title("Weight vs Height")
 st.pyplot(fig)
+
+st.write("This scatterplot is harder to infer, but a exponential graph could be used to infer. After 7.5 in Height, it's more difficult 
+          to access.")
+
 
 
