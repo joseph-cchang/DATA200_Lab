@@ -14,6 +14,10 @@ st.write("Here is a display of the fish dataframe:")
 st.dataframe(df)
 
 
+st.write("Here is a condensed dataframe")
+st.dataframe(df[['Species', 'Weight', 'Height']])
+
+
 st.write("Here is a histogram graph")
 n_bins = 10
 fig, ax = plt.subplots()
@@ -26,7 +30,7 @@ st.pyplot(fig)
 
 
 st.write("Here is a scatterplot graph")
-fig, ax = plt.figure()
+fig, ax = plt.subplots()
 ax.scatter(df['Height'], df['Weight'])
 ax.set_xlabel("Height")
 ax.set_ylabel("Weight")
