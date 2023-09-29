@@ -43,7 +43,15 @@ st.pyplot(fig)
 st.write("This scatterplot is harder to infer, but a exponential graph could be used to infer. After 7.5 in Height, it's more difficult to access.")
 
 
-# In[ ]:
+st.markdown("""
+<style>
+.big-font {
+    font-size:300px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
+
 
 
 
