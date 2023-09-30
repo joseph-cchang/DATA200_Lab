@@ -76,12 +76,23 @@ if st.button("Click here to see the dataframe only in Mountain View"):
     st.dataframe(df_MW)
 
 # Graph 5
+'''
 st.write("Here is another histogram graph:")
 fig, ax = plt.subplots()
 ax.hist(df_MW['Income'], edgecolor = "black")
 ax.set_title("Histogram of Income in Mountain View")
 ax.set_xlabel('Income Value')
 ax.set_ylabel('Count')
+st.pyplot(fig)
+st.write("This bar graph shows the histogram of income for people living in Mountain View.")
+'''
+
+st.write("Here is a boxplot:")
+fig, ax = plt.subplots()
+ax.boxplot(df_MW['Income'])
+ax.set_title("Boxplot of Income in Mountain View")
+ax.set_xlabel('Income Value')
+ax.set_ylabel('Value')
 st.pyplot(fig)
 st.write("This bar graph shows the histogram of income for people living in Mountain View.")
 
