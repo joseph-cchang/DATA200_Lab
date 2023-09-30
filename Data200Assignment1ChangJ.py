@@ -10,13 +10,12 @@ import matplotlib.pyplot as plt
 fish_df = pd.read_csv('Fish.csv')
 toy_df = pd.read_csv("toy_dataset.csv")
 
-st.markdown("""<style>.big-font {font-size:100px !important;} </style> """, unsafe_allow_html=True)
-st.markdown('<p class="big-font">Here is a display of the fish dataframe: </p>', unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-size:12px !important;} </style> """, unsafe_allow_html=True)
+st.markdown('<p class="big-font"> Here is a display of the fish dataframe: </p>', unsafe_allow_html=True)
 #st.write("Here is a display of the fish dataframe:")
 st.dataframe(fish_df)
 
-if st.button("Condensed Dataframe"):
-    st.write("Here is a condensed dataframe")
+if st.button("Click here to see a condensed Dataframe"):
     st.dataframe(fish_df[['Species', 'Weight', 'Height']])
 
 st.write("Here is a histogram graph")
