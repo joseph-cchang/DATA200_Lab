@@ -38,7 +38,8 @@ st.write("This histogram shows the height of the fish. The most common fish heig
 
 # Graph 2
 st.markdown("""<style>.big-font {font-size:15px !important;} </style> """, unsafe_allow_html=True)
-st.markdown('<p class="big-font"> Here is a scatterplot graph: </p>', unsafe_allow_html=True)fig, ax = plt.subplots()
+st.markdown('<p class="big-font"> Here is a scatterplot graph: </p>', unsafe_allow_html=True)
+fig, ax = plt.subplots()
 ax.scatter(fish_df['Height'], fish_df['Weight'])
 ax.set_xlabel("Height")
 ax.set_ylabel("Weight")
