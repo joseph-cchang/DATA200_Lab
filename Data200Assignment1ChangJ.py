@@ -72,23 +72,15 @@ ax.set_title("Height vs Width")
 st.pyplot(fig)
 st.write("This stem plot shows the Height as the x-axis and width as the y-axis. It appears when height is around 10.5-12.5, width is also at the highest at around 8. The graph seems to show a linear trend up until height is 12.")
 
-st.markdown("""<style>.big-font {font-size:16px !important;} </style> """, unsafe_allow_html=True)
-st.markdown('<p class="big-font"> Here is a display of the toy dataframe: </p>', unsafe_allow_html=True)
-st.dataframe(toy_df)
-
-if st.button("Click here to see partial dataframe"):
-    df_MW = toy_df[toy_df['City']=="Mountain View"]
-    st.dataframe(df_MW)
-    st.write("This dataframe shows just for people in Mountain View city.")
-
 # Graph 5
-st.write("Here is a boxplot:")
+st.markdown("""<style>.big-font {font-size:14px !important;} </style> """, unsafe_allow_html=True)
+st.markdown('<p class="big-font"> Here is a boxplot: </p>', unsafe_allow_html=True)
 fig, ax = plt.subplots()
-ax.boxplot(toy_df[toy_df['City']=="Mountain View"]['Income'])
-ax.set_title("Boxplot of Income in Mountain View")
-ax.set_xlabel('Income Value')
+ax.boxplot(fish_df['Weight'])
+ax.set_title("Boxplot of Weight")
+ax.set_xlabel('Weight')
 ax.set_ylabel('Value')
 st.pyplot(fig)
-st.write("This bar graph shows the histogram of income for people living in Mountain View.")
+st.write("This bar graph shows a boxplot of fish weight.")
 
 
