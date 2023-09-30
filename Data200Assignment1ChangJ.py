@@ -26,7 +26,8 @@ if st.button("Click here to see a condensed Dataframe"):
 
 # Graph 1
 st.markdown("""<style>.big-font {font-size:15px !important;} </style> """, unsafe_allow_html=True)
-st.markdown('<p class="big-font"> Here is a histogram: </p>', unsafe_allow_html=True)n_bins = 10
+st.markdown('<p class="big-font"> Here is a histogram: </p>', unsafe_allow_html=True)
+n_bins = 10
 fig, ax = plt.subplots()
 ax.hist(fish_df['Height'], edgecolor = "black")
 ax.set_title("Histogram of Height")
