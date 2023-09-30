@@ -22,10 +22,11 @@ st.dataframe(fish_df)
 
 if st.button("Click here to see a condensed Dataframe"):
     st.dataframe(fish_df[['Species', 'Weight', 'Height']])
+    st.write("This dataframe shows just the columns of Species, Weight, and Height")
 
 # Graph 1
-st.write("Here is a histogram graph:")
-n_bins = 10
+st.markdown("""<style>.big-font {font-size:15px !important;} </style> """, unsafe_allow_html=True)
+st.markdown('<p class="big-font"> Here is a histogram: </p>', unsafe_allow_html=True)n_bins = 10
 fig, ax = plt.subplots()
 ax.hist(fish_df['Height'], edgecolor = "black")
 ax.set_title("Histogram of Height")
@@ -35,8 +36,8 @@ st.pyplot(fig)
 st.write("This histogram shows the height of the fish. The most common fish height is between the 5.0 - 7.5, with around 40 counts. Overall, the distribution seems skew right.")
 
 # Graph 2
-st.write("Here is a scatterplot graph:")
-fig, ax = plt.subplots()
+st.markdown("""<style>.big-font {font-size:15px !important;} </style> """, unsafe_allow_html=True)
+st.markdown('<p class="big-font"> Here is a scatterplot graph: </p>', unsafe_allow_html=True)fig, ax = plt.subplots()
 ax.scatter(fish_df['Height'], fish_df['Weight'])
 ax.set_xlabel("Height")
 ax.set_ylabel("Weight")
@@ -45,27 +46,29 @@ st.pyplot(fig)
 st.write("This scatterplot is harder to infer, but a exponential graph could be used to infer. After 7.5 in Height, it's more difficult to access.")
 
 # Graph 3
-st.write("Here is a bar graph:")
-fish_df.groupby(['Species'])['Width'].mean()
+st.markdown("""<style>.big-font {font-size:15px !important;} </style> """, unsafe_allow_html=True)
+st.markdown('<p class="big-font"> Here is a bar graph: </p>', unsafe_allow_html=True)
+fish_df.groupby(['Species'])['Length1'].mean()
 fig, ax = plt.subplots()
 species = fish_df['Species'].unique()
-mean_wid = fish_df.groupby(['Species'])['Width'].mean()
-ax.bar(species, mean_wid)
+mean_ = fish_df.groupby(['Species'])['Length1'].mean()
+ax.bar(species, mean_)
 ax.set_xlabel('Species')
-ax.set_ylabel('Mean Width')
-ax.set_title('Species by the Mean Width')
+ax.set_ylabel('Mean of Length1')
+ax.set_title('Species by the Mean of Length1')
 st.pyplot(fig)
-st.write("This bar graph shows the mean wid of all the species. Here we can see that on average, Parkki has the highest at around 40. The lowest is Pike at around 11.")
+st.write("This bar graph shows the mean of length1 of all the species. Here we can see that on average, Parkki has the highest at around 40. The lowest is Pike at around 11.")
 
 # Graph 4
-st.write("Here is a stem plot:")
+st.markdown("""<style>.big-font {font-size:15px !important;} </style> """, unsafe_allow_html=True)
+st.markdown('<p class="big-font"> Here is a stem plot: </p>', unsafe_allow_html=True)
 fig, ax = plt.subplots()
 ax.stem(fish_df['Height'], fish_df['Width'])
 ax.set_xlabel("Height")
 ax.set_ylabel("Width")
 ax.set_title("Height vs Width")
 st.pyplot(fig)
-st.write("This stem plot ....")
+st.write("This stem plot shows the Height as the x-axis and width as the y-axis. It appears when height is around 10.5-12.5, width is also at the highest at around 8. The graph seems to show a linear trend up until height is 12.")
 
 st.markdown("""<style>.big-font {font-size:20px !important;} </style> """, unsafe_allow_html=True)
 st.markdown('<p class="big-font"> Here is a display of the toy dataframe: </p>', unsafe_allow_html=True)
@@ -76,17 +79,6 @@ if st.button("Click here to see the dataframe only in Mountain View"):
     st.dataframe(df_MW)
 
 # Graph 5
-'''
-st.write("Here is another histogram graph:")
-fig, ax = plt.subplots()
-ax.hist(df_MW['Income'], edgecolor = "black")
-ax.set_title("Histogram of Income in Mountain View")
-ax.set_xlabel('Income Value')
-ax.set_ylabel('Count')
-st.pyplot(fig)
-st.write("This bar graph shows the histogram of income for people living in Mountain View.")
-'''
-
 st.write("Here is a boxplot:")
 fig, ax = plt.subplots()
 ax.boxplot(df_MW['Income'])
