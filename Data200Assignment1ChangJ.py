@@ -25,7 +25,7 @@ if st.button("Click here to see a condensed Dataframe"):
     st.write("This dataframe shows just the columns of Species, Weight, and Height")
 
 # Graph 1
-st.markdown("""<style>.big-font {font-size:14px !important;} </style> """, unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-size:16px !important;} </style> """, unsafe_allow_html=True)
 st.markdown('<p class="big-font"> Here is a histogram: </p>', unsafe_allow_html=True)
 n_bins = 10
 fig, ax = plt.subplots()
@@ -37,7 +37,7 @@ st.pyplot(fig)
 st.write("This histogram shows the height of the fish. The most common fish height is between the 5.0 - 7.5, with around 40 counts. Overall, the distribution seems skew right.")
 
 # Graph 2
-st.markdown("""<style>.big-font {font-size:14px !important;} </style> """, unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-size:16px !important;} </style> """, unsafe_allow_html=True)
 st.markdown('<p class="big-font"> Here is a scatterplot graph: </p>', unsafe_allow_html=True)
 fig, ax = plt.subplots()
 ax.scatter(fish_df['Height'], fish_df['Weight'])
@@ -48,7 +48,7 @@ st.pyplot(fig)
 st.write("This scatterplot is harder to infer, but a exponential graph could be used to infer. After 7.5 in Height, it's more difficult to access.")
 
 # Graph 3
-st.markdown("""<style>.big-font {font-size:14px !important;} </style> """, unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-size:16px !important;} </style> """, unsafe_allow_html=True)
 st.markdown('<p class="big-font"> Here is a bar graph: </p>', unsafe_allow_html=True)
 fish_df.groupby(['Species'])['Length1'].mean()
 fig, ax = plt.subplots()
@@ -62,7 +62,7 @@ st.pyplot(fig)
 st.write("This bar graph shows the mean of length1 of all the species. Here we can see that on average, Parkki has the highest at around 40. The lowest is Pike at around 11.")
 
 # Graph 4
-st.markdown("""<style>.big-font {font-size:14px !important;} </style> """, unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-size:16px !important;} </style> """, unsafe_allow_html=True)
 st.markdown('<p class="big-font"> Here is a stem plot: </p>', unsafe_allow_html=True)
 fig, ax = plt.subplots()
 ax.stem(fish_df['Height'], fish_df['Width'])
@@ -73,7 +73,7 @@ st.pyplot(fig)
 st.write("This stem plot shows the Height as the x-axis and width as the y-axis. It appears when height is around 10.5-12.5, width is also at the highest at around 8. The graph seems to show a linear trend up until height is 12.")
 
 # Graph 5
-st.markdown("""<style>.big-font {font-size:14px !important;} </style> """, unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-size:16px !important;} </style> """, unsafe_allow_html=True)
 st.markdown('<p class="big-font"> Here is a boxplot: </p>', unsafe_allow_html=True)
 fig, ax = plt.subplots()
 ax.boxplot(fish_df['Weight'])
@@ -81,6 +81,6 @@ ax.set_title("Boxplot of Weight")
 ax.set_xlabel('Weight')
 ax.set_ylabel('Value')
 st.pyplot(fig)
-st.write("This bar graph shows a boxplot of fish weight.")
+st.write("This shows a boxplot of fish weight. The 25th percetile is around 150. The median or 50th percentile is around 250. The 75th percentile is around 650, and there are some outliers we see as well.")
 
 
